@@ -4,14 +4,12 @@ row = 0
 column = 0
 p = 0
 
-
 def printBoard():
     global l
     for r in l:
         for c in r:
             print(c, end="")
         print()
-
 
 def newInput(flag):
     global l, p
@@ -61,7 +59,6 @@ def newInput(flag):
         else:
             l[2][4] = "O"
 
-
 def checkPosition():
     global l, p, row, column
     if p < 1 or p > 9:
@@ -73,7 +70,6 @@ def checkPosition():
         print()
         return False
     return True
-
 
 def setRowColumn():
     global p, row, column
@@ -105,7 +101,6 @@ def setRowColumn():
         row = 2
         column = 4
 
-
 def checkWin():
     global l, win
     if ((l[0][0] == l[0][2] == l[0][4]) and (l[0][0] != '-')) or (
@@ -118,7 +113,6 @@ def checkWin():
             (l[1][0] == l[1][2] == l[1][4]) and (l[1][0] != '-')):
         win = True
 
-
 def checkFullBoard():
     global l
     count = 0
@@ -129,7 +123,6 @@ def checkFullBoard():
     if count == 0:
         return True
     return False
-
 
 def validateInput(player):
     global p
@@ -143,7 +136,6 @@ def validateInput(player):
             print("Invalid input")
             print()
     setRowColumn()
-
 
 def switchTurns(flag):
     global win
@@ -167,7 +159,6 @@ def switchTurns(flag):
             print(player + " won !!")
     return True
 
-
 def playGame():
     global win
     print()
@@ -180,6 +171,5 @@ def playGame():
             print("Tie !")
             break
         switchTurns(True)
-
 
 playGame()
